@@ -27,7 +27,7 @@ Shared code and notebooks for the COMP 9170 group project.
 
 `download_data.py` skips files that are already there. Options: `--only no2 weather`, `--years 2023-2024`, `--force`, `--list`. See `python download_data.py --help`.
 
-## Column contract
+## Column definitions
 
 These are the column names every model table will use.
 
@@ -49,7 +49,7 @@ Select features by prefix, not by listing names.
 
 ## Working together
 
-- Work on a branch. When it runs, merge it into `main` yourself. No pull requests.
+- Work on a branch. When it runs, merge it into `main` yourself.
 - Before pushing `main`: pull, merge, rerun what you changed, then push. `main` should always run.
 - One branch edits a notebook at a time. To experiment, copy it under a new name.
 - If you change `pipeline/` or `config.py`, tell the group: everyone pulls and reruns `build.py`.

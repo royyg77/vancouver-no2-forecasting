@@ -22,6 +22,7 @@ LOWER_MAINLAND = "02 - Lower Mainland"
 YVR_CLIMATE_ID = "1108395"
 SEA_ISLAND_CLIMATE_ID = "1108380" # Vancouver Sea Island, for rain
 HARBOUR_CLIMATE_ID = "1108446" # Vancouver Harbour, for rain
+BURNS_BOG_CLIMATE_ID = "1102415" # Delta Burns Bog, for rain
 STATION_LIST_YEAR = 2024 # the station list is read from this year's folder
 
 TRIES = 4
@@ -131,6 +132,7 @@ SOURCES = {
     "weather": ("weather_yvr", "{year}.csv", True, eccc_hourly(YVR_CLIMATE_ID)),
     "rain_sea_island": ("rain_sea_island", "{year}.csv", True, eccc_hourly(SEA_ISLAND_CLIMATE_ID)),
     "rain_harbour": ("rain_harbour", "{year}.csv", True, eccc_hourly(HARBOUR_CLIMATE_ID)),
+    "rain_burns_bog": ("rain_burns_bog", "{year}.csv", True, eccc_hourly(BURNS_BOG_CLIMATE_ID)),
 }
 
 
