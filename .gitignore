@@ -1,0 +1,26 @@
+# data stays out of git for now; the cleaned grid is added deliberately later
+data/*
+!data/README.md
+
+# Python
+.venv/
+__pycache__/
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# machine-specific
+.DS_Store
+.claude/
+.vscode/
+
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+
+# whole Zotero library, with paths from one laptop
+proposal_docs/references.bib
