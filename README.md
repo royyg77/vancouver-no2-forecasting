@@ -12,17 +12,20 @@ Shared code and notebooks for the COMP 9170 group project.
    ```
    On Windows, use `py -3.12 -m venv .venv` and then `.venv\Scripts\activate`.
 3. Run `pip install -r requirements.txt`. For the graph model, use `requirements-gnn.txt` instead.
-4. Get the cleaned grid. How it will be shared is still being settled.
-5. Run `python build.py`. It isn't built yet.
+4. On a Mac, run `brew install libomp` once. LightGBM needs it.
+5. Run `python download_data.py`. It downloads the raw data into `data/raw/` (about 370 MB, a few minutes).
+6. Optional: run `notebooks/01_build_and_inspect.ipynb` with the `.venv` kernel to look at the raw data.
 
 ## Commands
 
-| Command | What it does | Needs |
-|---|---|---|
-| `python clean_data.py` | raw files -> cleaned hourly grid | the raw files |
-| `python build.py` | cleaned grid -> all tables | the cleaned grid |
+| Command | What it does | Needs | Status |
+|---|---|---|---|
+| `python download_data.py` | public sources -> `data/raw/` | internet | works |
+| `python inspect_data.py <path>` or `--source <name> --year <yyyy>` | prints a summary of one `.csv` or `.parquet` file; changes nothing | the file | works |
+| `python clean_data.py` | raw files -> cleaned hourly grid | the raw files | not built yet |
+| `python build.py` | cleaned grid -> all tables | the cleaned grid | not built yet |
 
-Neither is built yet.
+`download_data.py` skips files that are already there. Options: `--only no2 weather`, `--years 2023-2024`, `--force`, `--list`. See `python download_data.py --help`.
 
 ## Column contract
 
@@ -46,8 +49,9 @@ Select features by prefix, not by listing names.
 
 ## Working together
 
-- `main` always works. Make a branch, then open a pull request.
+- Work on a branch. When it runs, merge it into `main` yourself. No pull requests.
+- Before pushing `main`: pull, merge, rerun what you changed, then push. `main` should always run.
 - One branch edits a notebook at a time. To experiment, copy it under a new name.
-- Changes to `pipeline/` need a pull request and passing tests.
+- If you change `pipeline/` or `config.py`, tell the group: everyone pulls and reruns `build.py`.
 - Notebook outputs are kept in git.
 - No 2024 scores until the end.

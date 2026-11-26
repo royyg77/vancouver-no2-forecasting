@@ -1,6 +1,5 @@
 """Download raw inputs into data/raw/. Downloads and saves only: no cleaning, no unit changes.
 
-Design: SchoolObsidianVault/.../project_ds/02_data_sources.md, "Logic".
 Standard library only, so it runs before the .venv exists.
 
 Each source is a function that writes one file. To add a source, write one
@@ -21,6 +20,8 @@ BC_ARCHIVE = "ftp://ftp.env.gov.bc.ca/pub/outgoing/AIR/AnnualSummary"
 ECCC_API = "https://api.weather.gc.ca/collections/climate-hourly/items"
 LOWER_MAINLAND = "02 - Lower Mainland"
 YVR_CLIMATE_ID = "1108395"
+SEA_ISLAND_CLIMATE_ID = "1108380" # Vancouver Sea Island, for rain
+HARBOUR_CLIMATE_ID = "1108446" # Vancouver Harbour, for rain
 STATION_LIST_YEAR = 2024 # the station list is read from this year's folder
 
 TRIES = 4
@@ -125,8 +126,11 @@ def eccc_hourly(climate_id):
 # name -> (folder, file name pattern, per year?, function)
 SOURCES = {
     "no2": ("no2", "{year}.csv", True, bc_pollutant("NO2")),
+    "o3": ("o3", "{year}.csv", True, bc_pollutant("O3")),
     "stations": ("stations", "bc_air_monitoring_stations.csv", False, bc_station_list),
     "weather": ("weather_yvr", "{year}.csv", True, eccc_hourly(YVR_CLIMATE_ID)),
+    "rain_sea_island": ("rain_sea_island", "{year}.csv", True, eccc_hourly(SEA_ISLAND_CLIMATE_ID)),
+    "rain_harbour": ("rain_harbour", "{year}.csv", True, eccc_hourly(HARBOUR_CLIMATE_ID)),
 }
 
 

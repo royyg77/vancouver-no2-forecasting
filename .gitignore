@@ -1,6 +1,7 @@
 # data stays out of git for now; the cleaned grid is added deliberately later
 data/*
 !data/README.md
+data/clean/
 
 # Python
 .venv/

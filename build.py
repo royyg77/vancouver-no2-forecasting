@@ -1,3 +1,3 @@
-"""Cleaned grid -> all tables (S5 onward). Needs the cleaned grid."""
+"""Cleaned grid -> model tables. Needs data/clean/clean_grid.parquet."""
 
 raise SystemExit("not built yet")

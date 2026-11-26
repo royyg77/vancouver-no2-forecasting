@@ -12,4 +12,4 @@ PATTERN_YEARS = [2016, 2017, 2018, 2019, 2021, 2022] # training years only
 CLARK = "E316370"
 LOCAL_TZ = "America/Vancouver"
 
-# Forecast hour (D1), scored rows (D6), New Year rule (D7) and training hours (D11) go here once decided.
+# Forecast hour, scored rows, New Year rule and training hours go here once decided.

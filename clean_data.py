@@ -1,4 +1,4 @@
-"""Raw files -> cleaned hourly grid (S1-S4). Needs the raw files.
+"""Raw files -> cleaned hourly grid. Needs the raw files in data/raw/.
 
 Writes data/clean/clean_grid.parquet.
 """
